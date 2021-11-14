@@ -1,0 +1,47 @@
+id,text,predict
+0,Good morning. Welcome to the hospital! I am Nao. What is your name?,positive
+1,Good morning. Welcome to the hospital! I am Nao. What is your name?,positive
+2,It’s really nice to meet you [NAME],positive
+3,Good afternoon. Welcome to the hospital! I am Nao. What is your name?,positive
+4,Good evening. Welcome to the hospital! I am Nao. What is your name?,positive
+5,Hello. Welcome to the hospital! I am Nao. What is your name?,neutral
+6,Can I help you with something?,neutral
+7,That’s okay.,positive
+8,That’s great. please come closer so you can hear me.,positive
+9,Would you like to check in for your appointment book an appointment re-schedule your appointment or hear more information about your appointment?,neutral
+10,To check in to your appointment please tell me your name and date of birth. I will then check you in.,neutral
+11,Okay thanks. I have checked you in. Just so you know the clinic is running X minutes late today.,positive
+12,To book or change an appointment please talk to the receptionist. They are behind me.,neutral
+13,Your appointment might be slightly delayed as the clinic is running X minutes late today. Sorry about that!,negative
+14,Can I please ask you some questions about how you are feeling?,neutral
+15,That’s okay. Please remember to sanitize your hands. Take care.,positive
+16,May I take your temperature?,neutral
+17,That’s Okay. I will ask you some questions.,neutral
+18,Great. I will take it while I ask you some questions.,positive
+19,Please tell me if you have any of the following… Shortness of breath chest pains a cough loss or change to your smell or a temperature?,negative
+20,That’s good. Thank you for answering my questions. Please use the hand sanitizer and take a seat. I wish you all the best.,positive
+21,That’s good. Thank you for answering my questions. Your temperature is quite high. Please talk to [NAME] who wants to check some things with you. I wish you all the best.,positive
+22,I’m sorry to hear that. Please talk to [NAME] who wants to check some things with you. I wish you all the best.,neutral
+23,Do you need help finding something?,neutral
+24,Oh okay then. Have a good day.,positive
+25,The toilets are to your left.,neutral
+26,The exit is on the ground floor. The stairs and an elevator are behind you.,neutral
+27,The café is on level one. The stairs and an elevator are to the right.,neutral
+28,The pharmacy is beside the exit on the ground floor. The stairs and an elevator are behind you.,neutral
+29,The paediatric ward is on the third floor the elevator is to your left,neutral
+30,The emergency department is downstairs by the main entry.,neutral
+31,Please have a look at this map. ,neutral
+32,Do you want me to entertain you while you wait?,neutral
+33,That’s okay- do you need help with directions or your appointment?,neutral
+34,Can I show you tai chi or a dance?,neutral
+35,I hope that has entertained you a little. Take care now.,positive
+36,Do you want to hear a joke or watch me dance?,neutral
+37,How do robots eat salsa? With micro chips,neutral
+38,What's a robot's favourite dance? The Roomba,neutral
+39,Why did the robot want to take a train up the mountain? He thought it would be a hard drive,neutral
+40,What do you get if you cross a robot with a rock band? Heavy metal,neutral
+41,Why are robot mechanics never lonely? They're always making new friends,neutral
+42,Why do robots go on holiday? To recharge their batteries,neutral
+43,Do you want to hear another joke?,neutral
+44,Your turn to tell me a joke!,neutral
+45,Hahaha you’re so funny! I hope that has entertained you a little. Take care now.,positive

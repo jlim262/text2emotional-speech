@@ -1,3 +1,5 @@
 {
-  "ros.distro": "kinetic"
+  "ros.distro": "kinetic",
+  "jupyter.debugJustMyCode": false,
+  "justMyCode": false
 }

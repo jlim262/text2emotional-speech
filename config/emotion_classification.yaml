@@ -1,0 +1,103 @@
+# Placeholders
+##################################################################################################################
+in_path: "text2emospch/input/tweet-emotion-data"
+out_path: "/media/anyone/Elements SE"
+kaggle_datasets_name: "TweetEmotionAnalysis"  # should be unique, kaggle dataset name, output save folder name
+transformer_type: "roberta-base" # models are listed here(https://huggingface.co/models)
+# transformer_path: "{in_path}/bert-base-uncased/"
+transformer_path: "text2emospch/input/bert-base-uncased/"
+##################################################################################################################
+
+wandb:
+  sweep:
+    name: "Sweep"
+    use: False
+    yaml: "sweep.yaml"
+  group:
+    name: "emotion-classification"
+  project:
+    name: "BuilT-Text2EmoSpeech"
+
+dataset:
+  name: "TweetEmotionDataset"
+  params:
+    max_len: 128
+    transformer_type: "{transformer_type}"
+    transformer_path: "{transformer_path}"
+    csv_path: "{in_path}/6H-AP_emotion_labelled_tweets.dat"
+    # inference: False
+
+# splitter:
+#   name: "TweetSplitter"
+#   params:
+#     csv_path: "tweet/input/tweet-sentiment-extraction/corrected_new_train.csv"
+#     n_splits: 5
+#     shuffle: True
+#     random_state: 42
+
+splitter:
+  name: "EmotionDataSplitter"
+  params:
+    csv_path: "{in_path}/6H-AP_emotion_labelled_tweets.dat"
+    ratio: 0.8
+    shuffle: True
+    random_state: 42
+    train_csv_path: "{in_path}/splitted_emotion_train.csv"
+    test_csv_path: "{in_path}/splitted_emotion_test.csv"
+
+model:
+  name: "TweetSentimentClassificationModel"
+  params:
+    transformer_type: "{transformer_type}"
+    transformer_path: "{transformer_path}"
+    drop_out_rate: 0.1
+    num_classes: 6
+
+train:
+  random_state: 2021
+  dir: "{out_path}/{kaggle_datasets_name}"
+  name: "{kaggle_datasets_name}"
+  batch_size: 178
+  num_epochs: 3
+  gradient_accumulation_step: 1
+  continue_from_last_checkpoint: False
+  save_state_dict_only: True
+  early_stopper:
+    mode: "max"
+
+evaluation:
+  batch_size: 32
+  boundary_scores: [0, 0.5, 0.6, 0.7, 7.5, 0.8]
+  intervals: [0, 0, 0, 0, 0, 0]
+
+loss:
+  name: "TweetLoss"
+
+optimizer:
+  name: "AdamWOptimizer"
+  params:
+    lr: 0.00003
+
+scheduler:
+  name: "CosineScheduler"
+  params:    
+    num_warmup_steps: 50
+
+forward_hook:
+  name: "TweetForwardHook"
+
+post_forward_hook:
+  name: "TweetPostForwardHook"
+
+metric_hook:
+  name: "TweetMetric"
+
+logger_hook:
+  name: "BaseLogger"
+
+transforms:
+  name: ""
+  num_preprocessor: 1
+  params:
+    - ToTensor:
+      name: "ToTensor"
