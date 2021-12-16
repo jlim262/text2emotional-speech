@@ -1,3 +1,4 @@
+*.pth
 text2emospch/input
 wandb/
 # Byte-compiled / optimized / DLL files

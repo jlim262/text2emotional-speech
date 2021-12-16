@@ -1,7 +1,7 @@
 # Placeholders
 ##################################################################################################################
 in_path: "text2emospch/input/tweet-sentiment-extraction"
-out_path: "/media/anyone/Elements SE"
+out_path: "."
 kaggle_datasets_name: "TweetSentimentAnalysis"  # should be unique, kaggle dataset name, output save folder name
 transformer_type: "roberta-base" # models are listed here(https://huggingface.co/models)
 # transformer_path: "{in_path}/bert-base-uncased/"

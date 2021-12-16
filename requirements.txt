@@ -5,3 +5,5 @@ kaggle
 transformers
 tokenizers
 imgkit
+tensorboard
+googledrivedownloader

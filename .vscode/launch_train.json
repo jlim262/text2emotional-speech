@@ -1,0 +1,104 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "split sentiment dataset",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": [
+        "split",
+        "with",
+        "${workspaceFolder}/config/sentiment_classification.yaml",
+        "-f",
+      ],
+      "env": {
+        "TOKENIZERS_PARALLELISM": "True"
+      }
+    },
+    {
+      "name": "split emotion dataset",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": [
+        "split",
+        "with",
+        "${workspaceFolder}/config/emotion_classification.yaml",
+        "-f",
+      ],
+      "env": {
+        "TOKENIZERS_PARALLELISM": "True"
+      }
+    },
+    {
+      "name": "train single sentiment classification",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": [
+        "train",
+        "with",
+        "${workspaceFolder}/config/sentiment_classification.yaml",
+        "-f",
+      ],
+      "env": {
+        "TOKENIZERS_PARALLELISM": "True"
+      }
+    },
+    {
+      "name": "train single emotion classification",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": [
+        "train",
+        "with",
+        "${workspaceFolder}/config/emotion_classification.yaml",
+        "-f",
+      ],
+      "env": {
+        "TOKENIZERS_PARALLELISM": "True"
+      }
+    },
+    {
+      "name": "Inference sentiment",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": [
+        "inference_sentiment",
+        "with",
+        "${workspaceFolder}/config/sentiment_classification.yaml",
+        "-f",
+      ],
+      "env": {
+        "TOKENIZERS_PARALLELISM": "True"
+      }
+    },
+    {
+      "name": "Inference emotion",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": [
+        "inference_emotion",
+        "with",
+        "${workspaceFolder}/config/emotion_classification.yaml",
+        "-f",
+      ],
+      "env": {
+        "TOKENIZERS_PARALLELISM": "True"
+      }
+    },
+  ]
+}
